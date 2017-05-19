@@ -44,7 +44,7 @@ public class WeatherParser {
             double max = tempObj.getDouble(OWM_Max);
             double min = tempObj.getDouble(OWM_Min);
 
-            minmax = Math.round(min)+ " - " +Math.round(max);
+            minmax = Math.round(max)+ "/" +Math.round(min);
 
             int hum = dayForecast.getInt("humidity");
 
