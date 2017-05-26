@@ -1,5 +1,6 @@
 package gr.ihu.lab.ihuweather_01;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -157,13 +158,15 @@ public class ForecastFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 final String Item = adapter.getItem(position);
 
-                Toast toast = Toast.makeText(getActivity(), Item, Toast.LENGTH_LONG);
-                toast.show();
+                //Toast toast = Toast.makeText(getActivity(), Item, Toast.LENGTH_SHORT);
+                //toast.show();
+
+                Intent i = new Intent(getActivity(), DetailedForecast.class);
+                i.putExtra(i.EXTRA_TEXT, Item);
+                startActivity(i);
             }
         });
 
         return rootView;
     }
-
-
 }
